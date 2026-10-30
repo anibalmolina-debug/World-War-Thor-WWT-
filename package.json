@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "@netlify/functions": "^3.1.10",
+    "@netlify/functions": "^6.0.3",
     "pg": "^8.23.1"
   },
   "devDependencies": {
