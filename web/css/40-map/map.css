@@ -1,0 +1,210 @@
+.s-map-room {
+  height: 100%;
+  width: 100%;
+  background: #0a0a0a;
+  overflow: hidden;
+  position: relative;
+}
+.s-map-wrapper {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+.s-map-wrapper:active {
+  cursor: grabbing;
+}
+.s-map-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.s-map-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+.t-territory {
+  fill: var(--paper-dark);
+  stroke: var(--olive);
+  stroke-width: 1;
+  transition: fill 0.2s, stroke-width 0.2s;
+}
+.t-territory:hover {
+  fill: var(--paper);
+}
+
+/* Nation tokens mapping */
+.t-territory[data-owner="UK"] { fill: #b30000; }
+.t-territory[data-owner="GER"] { fill: var(--steel); }
+.t-territory[data-owner="USA"] { fill: #003366; }
+.t-territory[data-owner="FRA"] { fill: #0055a4; }
+.t-territory[data-owner="SOV"] { fill: #cc0000; }
+.t-territory[data-owner="JPN"] { fill: #fdfdfd; }
+.t-territory[data-owner="ITA"] { fill: #008c45; }
+.t-territory[data-owner="CAN"] { fill: #ff0000; }
+.t-territory[data-owner="AUS"] { fill: #00008b; }
+.t-territory[data-owner="CHN"] { fill: #ee1c25; }
+.t-territory[data-owner="IND"] { fill: #ff9933; }
+.t-territory[data-owner="BRA"] { fill: #009c3b; }
+.t-territory[data-owner="MEX"] { fill: #006341; }
+.t-territory[data-owner="ESP"] { fill: #aa9900; }
+.t-territory[data-owner="POL"] { fill: #dc143c; }
+.t-territory[data-owner="TUR"] { fill: #e30a17; }
+.t-territory[data-owner="EGY"] { fill: #c0c0c0; }
+.t-territory[data-owner="IRN"] { fill: #007a3d; }
+.t-territory[data-owner="IRQ"] { fill: #000000; }
+.t-territory[data-owner="SYR"] { fill: #ce1126; }
+.t-territory[data-owner="ARG"] { fill: #74acdf; }
+.t-territory[data-owner="COL"] { fill: #fcd116; }
+.t-territory[data-owner="PER"] { fill: #d91023; }
+.t-territory[data-owner="VEN"] { fill: #ffcc00; }
+.t-territory[data-owner="ZAF"] { fill: #007a4d; }
+.t-territory[data-owner="ETH"] { fill: #006341; }
+.t-territory[data-owner="NGA"] { fill: #008751; }
+.t-territory[data-owner="THAI"] { fill: #a52a2a; }
+.t-territory[data-owner="VIET"] { fill: #da251d; }
+.t-territory[data-owner="KOR"] { fill: #0047a0; }
+.t-territory[data-owner="SAU"] { fill: #006c35; }
+.t-territory[data-owner="KSA"] { fill: #006c35; }
+.t-territory[data-owner="YEM"] { fill: #ce1126; }
+.t-territory[data-owner="OMN"] { fill: #cd2e3a; }
+.t-territory[data-owner="UAE"] { fill: #00732f; }
+.t-territory[data-owner="QAT"] { fill: #8d1b3d; }
+.t-territory[data-owner="KWT"] { fill: #000000; }
+.t-territory[data-owner="BHR"] { fill: #ce1126; }
+.t-territory[data-owner="ISR"] { fill: #0038b8; }
+.t-territory[data-owner="JOR"] { fill: #000000; }
+.t-territory[data-owner="LBN"] { fill: #ed1c24; }
+.t-territory[data-owner="SUD"] { fill: #0072ce; }
+.t-territory[data-owner="CHA"] { fill: #006341; }
+.t-territory[data-owner="NGR"] { fill: #008751; }
+.t-territory[data-owner="KEN"] { fill: #000000; }
+.t-territory[data-owner="TZA"] { fill: #1eb53a; }
+.t-territory[data-owner="MOZ"] { fill: #006400; }
+.t-territory[data-owner="ZWE"] { fill: #ffcc00; }
+.t-territory[data-owner="NAM"] { fill: #0035ad; }
+.t-territory[data-owner="ANG"] { fill: #000000; }
+.t-territory[data-owner="BWA"] { fill: #00adef; }
+.t-territory[data-owner="MAD"] { fill: #006400; }
+.t-territory[data-owner="MLI"] { fill: #ffce00; }
+.t-territory[data-owner="NIG"] { fill: #008751; }
+.t-territory[data-owner="GHA"] { fill: #fcd116; }
+.t-territory[data-owner="CIV"] { fill: #ff8200; }
+.t-territory[data-owner="SEN"] { fill: #0085ce; }
+.t-territory[data-owner="GAM"] { fill: #ce1126; }
+.t-territory[data-owner="GUI"] { fill: #ce1126; }
+.t-territory[data-owner="SLE"] { fill: #1eb53a; }
+.t-territory[data-owner="LBR"] { fill: #bf0a30; }
+.t-territory[data-owner="CMR"] { fill: #007a5e; }
+.t-territory[data-owner="CAF"] { fill: #006400; }
+.t-territory[data-owner="TGO"] { fill: #006400; }
+.t-territory[data-owner="BEN"] { fill: #008751; }
+.t-territory[data-owner="RWA"] { fill: #007a5e; }
+.t-territory[data-owner="BDI"] { fill: #ce1126; }
+.t-territory[data-owner="UGA"] { fill: #fcd116; }
+.t-territory[data-owner="SOM"] { fill: #0072ce; }
+.t-territory[data-owner="DJI"] { fill: #007a5e; }
+.t-territory[data-owner="ERI"] { fill: #ce1126; }
+.t-territory[data-owner="SOU"] { fill: #0072ce; }
+.t-territory[data-owner="CEN"] { fill: #0072ce; }
+.t-territory[data-owner="CHAD"] { fill: #006341; }
+.t-territory[data-owner="MAU"] { fill: #ce1126; }
+.t-territory[data-owner="ALG"] { fill: #006233; }
+.t-territory[data-owner="TUN"] { fill: #ce1126; }
+.t-territory[data-owner="LIB"] { fill: #006400; }
+.t-territory[data-owner="LBY"] { fill: #006400; }
+.t-territory[data-owner="TNR"] { fill: #ce1126; }
+.t-territory[data-owner="MOR"] { fill: #c1272d; }
+.t-territory[data-owner="MRT"] { fill: #006233; }
+
+/* Unit Markers */
+.u-marker {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  stroke: var(--ink);
+  stroke-width: 1;
+  transition: transform 0.2s;
+}
+.u-marker:hover {
+  transform: scale(1.3);
+}
+.u-marker[data-type="ID"] { fill: #ffd700; }
+.u-marker[data-type="AD"] { fill: #c0c0c0; }
+.u-marker[data-type="INF"] { fill: #228b22; }
+.u-marker[data-type="ARM"] { fill: #8b4513; }
+.u-marker[data-type="AIR"] { fill: #87ceeb; }
+.u-marker[data-type="NAV"] { fill: #000080; }
+
+/* Experience Rings */
+.u-ring {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1;
+  opacity: 0.5;
+}
+.u-ring-1 { r: 7px; }
+.u-ring-2 { r: 9px; }
+.u-ring-3 { r: 11px; }
+
+/* Arrows & Events */
+.t-arrow {
+  fill: none;
+  stroke: var(--alarm);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  marker-end: url(#arrowhead);
+}
+.t-arrow-move {
+  stroke: var(--steel);
+}
+.t-arrow-flow {
+  stroke-dasharray: 8, 4;
+  animation: arrow-flow 1s linear infinite;
+}
+@keyframes arrow-flow {
+  from { stroke-dashoffset: 12; }
+  to { stroke-dashoffset: 0; }
+}
+.t-event-marker {
+  fill: var(--alarm);
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+.t-event-captured {
+  fill: var(--phosphor);
+}
+
+/* Zoom Detail */
+[data-zoom="low"] .t-label {
+  display: none;
+}
+[data-zoom="low"] .t-territory {
+  stroke-width: 0.5;
+}
+[data-zoom="med"] .t-label {
+  display: block;
+  font-size: 0.7rem;
+}
+[data-zoom="high"] .t-label {
+  display: block;
+  font-size: 0.9rem;
+}
+[data-zoom="high"] .t-territory {
+  stroke-width: 1.5;
+}
+
+/* Accessibility */
+.t-territory.a11y-pattern {
+  fill: url(#pattern-dots);
+}
+.u-marker.a11y-high-contrast {
+  stroke-width: 2;
+  stroke: #fff;
+  filter: drop-shadow(0 0 2px #000);
+}
+

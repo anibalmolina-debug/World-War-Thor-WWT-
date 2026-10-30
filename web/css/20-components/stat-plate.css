@@ -1,0 +1,21 @@
+.c-stat-plate {
+  min-height: 8rem;
+}
+
+.c-stat-plate__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.c-stat-plate__value {
+  font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
+  margin-block: 0.35rem;
+}
+
+.c-stat-plate__hint {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  opacity: 0.65;
+}

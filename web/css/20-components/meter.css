@@ -1,0 +1,40 @@
+.c-meter {
+  display: block;
+  block-size: 0.55rem;
+  background: color-mix(in srgb, var(--ink) 18%, var(--cream));
+  border: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  margin-block-start: var(--space-2);
+}
+
+.c-meter > i {
+  display: block;
+  block-size: 100%;
+  background: var(--olive);
+}
+
+.c-meter[data-state="worn"] > i { background: #b36b2c; }
+.c-meter[data-state="damaged"] > i {
+  background: repeating-linear-gradient(45deg, var(--alarm) 0 6px, color-mix(in srgb, var(--alarm) 60%, black) 6px 12px);
+}
+
+.c-meter[data-pct="0"] > i { inline-size: 0; }
+.c-meter[data-pct="5"] > i { inline-size: 5%; }
+.c-meter[data-pct="10"] > i { inline-size: 10%; }
+.c-meter[data-pct="15"] > i { inline-size: 15%; }
+.c-meter[data-pct="20"] > i { inline-size: 20%; }
+.c-meter[data-pct="25"] > i { inline-size: 25%; }
+.c-meter[data-pct="30"] > i { inline-size: 30%; }
+.c-meter[data-pct="35"] > i { inline-size: 35%; }
+.c-meter[data-pct="40"] > i { inline-size: 40%; }
+.c-meter[data-pct="45"] > i { inline-size: 45%; }
+.c-meter[data-pct="50"] > i { inline-size: 50%; }
+.c-meter[data-pct="55"] > i { inline-size: 55%; }
+.c-meter[data-pct="60"] > i { inline-size: 60%; }
+.c-meter[data-pct="65"] > i { inline-size: 65%; }
+.c-meter[data-pct="70"] > i { inline-size: 70%; }
+.c-meter[data-pct="75"] > i { inline-size: 75%; }
+.c-meter[data-pct="80"] > i { inline-size: 80%; }
+.c-meter[data-pct="85"] > i { inline-size: 85%; }
+.c-meter[data-pct="90"] > i { inline-size: 90%; }
+.c-meter[data-pct="95"] > i { inline-size: 95%; }
+.c-meter[data-pct="100"] > i { inline-size: 100%; }

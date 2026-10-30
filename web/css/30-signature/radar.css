@@ -1,0 +1,29 @@
+@property --sweep-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.c-radar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--phosphor) 50%, var(--khaki));
+  background:
+    conic-gradient(from var(--sweep-angle), transparent 0%, var(--phosphor) 10%, transparent 20%),
+    repeating-radial-gradient(circle, transparent 0 10px, color-mix(in srgb, var(--phosphor) 20%, transparent) 11px 12px);
+  animation: sweep 4s linear infinite;
+}
+
+.c-radar--sm {
+  width: 22px;
+  height: 22px;
+}
+
+@keyframes sweep {
+  to { --sweep-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c-radar { animation: none; }
+}

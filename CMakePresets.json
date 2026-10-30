@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "wasm-release",
+      "displayName": "WASM Release",
+      "description": "Builds for WASM using Emscripten",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/wasm-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "EMSCRIPTEN": "ON"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${env:EMCC}",
+        "rhs": "1"
+      }
+    }
+  ]
+}

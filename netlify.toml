@@ -1,0 +1,39 @@
+[build]
+  command = "npm run build"
+  publish = "web"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  directory = "server/functions"
+  node_bundler = "esbuild"
+
+[dev]
+  command = "node tools/dev-server.mjs"
+  port = 8888
+  targetPort = 4173
+  framework = "#custom"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+    X-XSS-Protection = "1; mode=block"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Access-Control-Allow-Origin = "'self'"
+
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

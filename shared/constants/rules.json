@@ -1,0 +1,61 @@
+{
+  "coreVersion": "0.2.0",
+  "startDateLabel": "Apr–Jun 1939",
+  "cipherDefaultShift": 4,
+  "tokenCapPerResource": 2,
+  "stabilityMax": 10,
+  "diplomacyMax": 10,
+  "stabilityInitiative": { "ic": 3, "delta": 1, "maxPerSeason": 1 },
+  "warBonds": { "nt": 40, "ic": 1, "maxPerSeason": 2 },
+  "relocateFactoryIc": 1,
+  "factoryConstructionIc": 3,
+  "fortification": { "ic": 2, "mp": 0, "defenceBonus": 2 },
+  "espionage": { "icPerAction": 3, "maxActions": 4, "unlockLevels": [2, 4, 6, 8, 10] },
+  "politicalCampaign": { "per": 10, "bonusPct": 5, "maxNt": 60 },
+  "proxyFunding": { "minNt": 100, "maxNt": 300 },
+  "volunteersNt": 300,
+  "diplomacySpend": { "nt": 100, "ds": 1 },
+  "betrayalDiplomacyPenalty": 2,
+  "research": {
+    "icPerLevel": 2,
+    "maxLevel": 10,
+    "branches": {
+      "air": { "name": "Air", "wall": 4 },
+      "armor": { "name": "Armor", "wall": 4 },
+      "navy": { "name": "Navy", "wall": 4 },
+      "industry": { "name": "Industry", "wall": 5 },
+      "logistics": { "name": "Logistics", "wall": 4 },
+      "diplomacy": { "name": "Diplomacy", "wall": 4 },
+      "intel": { "name": "Intelligence", "wall": 5 }
+    }
+  },
+  "resourceLevels": ["critical-deficit", "deficit", "balanced", "surplus", "extreme-surplus"],
+  "developResource": {
+    "cheapIc": 2,
+    "expensiveIc": 4,
+    "cheapUpTo": "balanced"
+  },
+  "standingOrders": ["balanced", "defensive", "economic"],
+  "neutrality": {
+    "none": 0,
+    "acts": 20,
+    "cashCarry": 30,
+    "lendLease": 50,
+    "totalWar": 100
+  },
+  "integrity": {
+    "combatReadyMin": 75,
+    "heavilyDamagedMax": 49
+  },
+  "units": {
+    "ID": { "name": "Infantry", "ic": 1, "mp": 1, "heavy": false },
+    "AD": { "name": "Armor", "ic": 3, "mp": 2, "heavy": true },
+    "FW": { "name": "Fighters", "ic": 2, "mp": 1, "heavy": false },
+    "BW": { "name": "Bombers", "ic": 3, "mp": 1, "heavy": true },
+    "SF": { "name": "Submarines", "ic": 2, "mp": 1, "heavy": false },
+    "NF": { "name": "Naval Fleets", "ic": 4, "mp": 2, "heavy": true },
+    "MD": { "name": "Marines", "ic": 2, "mp": 1, "heavy": false },
+    "ABD": { "name": "Airborne", "ic": 2, "mp": 1, "heavy": false, "requiresAirRd": 4, "requiresBomberWing": true },
+    "MTN": { "name": "Mountain", "ic": 2, "mp": 1, "heavy": false }
+  }
+}

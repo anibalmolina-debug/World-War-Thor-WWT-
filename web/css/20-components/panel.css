@@ -1,0 +1,94 @@
+.c-panel {
+  position: relative;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--cream) 35%, transparent), transparent 28%),
+    var(--paper);
+  color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  box-shadow:
+    0 18px 40px #0006,
+    inset 0 0 0 1px color-mix(in srgb, white 18%, transparent);
+  padding: var(--space-4);
+}
+
+.c-panel--folder {
+  border-radius: 0 0 3px 3px;
+}
+
+.c-panel--folder::before {
+  content: "";
+  position: absolute;
+  inset-block-start: -18px;
+  inset-inline-start: 28px;
+  width: 120px;
+  height: 18px;
+  background: inherit;
+  background-color: var(--paper);
+  clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%);
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  border-block-end: 0;
+}
+
+.c-rule {
+  border: 0;
+  border-block-start: 2px solid var(--ink);
+  margin: var(--space-3) 0;
+}
+
+.c-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: grid;
+  place-items: center;
+  background: #0008;
+  color: var(--cream);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+}
+
+.c-overlay--crash {
+  background: #140b08f2;
+}
+
+.c-chip {
+  border: 1px solid var(--khaki);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.c-chip[data-state="ok"] {
+  color: var(--phosphor);
+  border-color: color-mix(in srgb, var(--phosphor) 40%, var(--khaki));
+}
+
+.c-badge {
+  margin-inline-start: 0.4rem;
+  background: var(--alarm);
+  color: white;
+  border-radius: 999px;
+  padding: 0 0.4rem;
+  font-size: 0.7rem;
+}
+
+.c-resource-list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.c-resource-level {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  padding: var(--space-2);
+  border: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+  background: var(--cream);
+}
+
+.c-resource-level[data-level="2"] { box-shadow: inset 4px 0 0 #2f6b3a; }
+.c-resource-level[data-level="1"] { box-shadow: inset 4px 0 0 #5a8a4a; }
+.c-resource-level[data-level="0"] { box-shadow: inset 4px 0 0 var(--khaki); }
+.c-resource-level[data-level="-1"] { box-shadow: inset 4px 0 0 #b36b2c; }
+.c-resource-level[data-level="-2"] { box-shadow: inset 4px 0 0 var(--alarm); }

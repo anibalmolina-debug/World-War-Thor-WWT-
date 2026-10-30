@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GUI Kitchen Sink - Component Library</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    body { padding: var(--space-5); background: var(--paper-dark); display: grid; gap: var(--space-5); }
+    .section { display: grid; gap: var(--space-3); }
+    .section h2 { font-family: var(--font-display); border-bottom: 2px solid var(--ink); margin-bottom: var(--space-3); }
+    .demo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-4); }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <h2>c-panel</h2>
+    <div class="demo-grid">
+      <div class="c-panel">
+        <div class="c-panel__header">
+          <strong>Standard Panel</strong>
+          <span class="c-chip">Active</span>
+        </div>
+        <p>Standard paper sheet with minimal styling.</p>
+      </div>
+      <div class="c-panel c-panel--clipped">
+        <div class="c-panel__header">
+          <strong>Clipped Panel</strong>
+          <span class="c-chip">Secured</span>
+        </div>
+        <p>Panel with corner clips for a technical aesthetic.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>c-stat-plate</h2>
+    <div class="demo-grid">
+      <div class="c-stat-plate">
+        <span class="c-stat-plate__label">System Load</span>
+        <span class="c-stat-plate__value">42.8%</span>
+        <span class="c-stat-plate__trend" data-dir="up">▲ 2.1%</span>
+      </div>
+      <div class="c-stat-plate">
+        <span class="c-stat-plate__label">Buffer Depth</span>
+        <span class="c-stat-plate__value">1,204 MB</span>
+        <span class="c-stat-plate__trend" data-dir="down">▼ 12.5%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>c-meter</h2>
+    <div class="demo-grid">
+      <div class="c-panel">
+        <label>Fuel Level</label>
+        <div class="c-meter" data-pct="75">
+          <i style="width: 75%;"></i>
+        </div>
+      </div>
+      <div class="c-panel">
+        <label>Oxygen Reserve (Over Budget)</label>
+        <div class="c-meter" data-state="over" data-pct="110">
+          <i style="width: 100%;"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>c-resource-level</h2>
+    <div class="demo-grid">
+      <div class="c-resource-level" data-state="extreme">Extreme Surplus</div>
+      <div class="c-resource-level" data-state="surplus">Surplus</div>
+      <div class="c-resource-level" data-state="nominal">Nominal</div>
+      <div class="c-resource-level" data-state="deficit">Deficit</div>
+      <div class="c-resource-level" data-state="critical">Critical Deficit</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>c-button</h2>
+    <div class="demo-grid">
+      <button class="c-button">Default Button</button>
+      <button class="c-button" data-style="stamp">STAMPED</button>
+      <button class="c-button" data-style="ghost">Ghost Button</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Overlays & Utilities</h2>
+    <div class="demo-grid">
+      <div class="c-panel">
+        <div class="c-tabs">
+          <div class="c-tab" data-state="active">Tab 1</div>
+          <div class="c-tab">Tab 2</div>
+          <div class="c-tab">Tab 3</div>
+        </div>
+        <div style="padding: var(--space-3) 0;">Content for Tab 1.</div>
+      </div>
+
+      <div style="position: relative; padding: var(--space-4);">
+        <span class="c-tooltip">Reference: X-42</span>
+      </div>
+
+      <div class="c-toast">System Updated: Sequence 04 lapped.</div>
+    </div>
+  </div>
+
+  <div class="c-modal">
+    <div class="c-panel" style="max-width: 400px;">
+      <div class="c-panel__header">
+        <strong>System Alert</strong>
+      </div>
+      <p>This is a modal overlay demonstration.</p>
+      <button class="c-button" style="width: 100%;">Dismiss</button>
+    </div>
+  </div>
+
+</body>
+</html>

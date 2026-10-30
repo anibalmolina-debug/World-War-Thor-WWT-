@@ -1,0 +1,15 @@
+@media (pointer: coarse) {
+  .c-button,
+  .l-tabs__item,
+  .c-tabs__tab {
+    min-height: 44px;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .c-panel,
+  .c-button,
+  .c-field__row {
+    border-width: 2px;
+  }
+}

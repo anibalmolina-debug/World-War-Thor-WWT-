@@ -1,0 +1,49 @@
+.s-login {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-5) var(--space-3);
+  background: radial-gradient(circle at 50% 20%, var(--cream) 0%, var(--cream) 30%, color-mix(in srgb, var(--ink) 20%, transparent) 100%);
+}
+
+.s-login__top {
+  position: absolute;
+  inset: var(--space-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.s-login__tools {
+  display: flex;
+  gap: var(--space-2);
+  color: var(--cream);
+}
+
+.s-login__card {
+  width: min(32rem, 100%);
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  box-shadow: 0 2rem 5rem rgba(0,0,0,0.2), 0 0 1rem rgba(0,0,0,0.1);
+  transform: rotate(-0.5deg);
+}
+
+.s-login__file,
+.s-login__ver {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.s-login__ver {
+  opacity: 0.65;
+  margin-block-end: var(--space-3);
+}
+
+.s-login__title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-block: var(--space-2);
+}
+
+.s-login__lead {
+  max-width: 28ch;
+}

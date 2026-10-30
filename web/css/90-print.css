@@ -1,0 +1,24 @@
+@media print {
+  .l-header,
+  .l-tabs,
+  .c-ticker,
+  .l-footer,
+  .c-radar,
+  .c-button,
+  .c-toast,
+  .c-overlay {
+    display: none !important;
+  }
+
+  .l-app,
+  .l-main,
+  .c-panel {
+    background: white;
+    color: black;
+    box-shadow: none;
+  }
+
+  .s-print {
+    padding: 0;
+  }
+}

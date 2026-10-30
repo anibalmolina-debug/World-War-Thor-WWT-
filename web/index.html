@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>World War Thor — War Cabinet</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#app">Skip to war room</a>
+    <div id="app"></div>
+    <div id="line-down" class="c-overlay c-overlay--crash" hidden>
+      <div class="c-panel">
+        <h1 data-id="crash-title">Line down</h1>
+        <p data-id="crash-body">The bunker link failed.</p>
+        <button type="button" class="c-button c-button--stamp" onclick="location.reload()">Reload</button>
+      </div>
+    </div>
+    <script type="module" src="/glue/main.js"></script>
+  </body>
+</html>

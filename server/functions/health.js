@@ -1,0 +1,1 @@
+export default async (req, context) => { return new Response(JSON.stringify({ status: 'ok', version: '0.1.0', core_version: '0.1.0' }), { headers: { 'Content-Type': 'application/json' } }); };

@@ -1,0 +1,43 @@
+.c-button {
+  border: 1px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  background: var(--cream);
+  padding: 0.45rem 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.c-button--stamp {
+  width: 100%;
+  background: var(--alarm);
+  color: #f7efe0;
+  border-color: color-mix(in srgb, var(--alarm) 60%, black);
+  font-weight: 700;
+  padding: 0.85rem;
+  letter-spacing: 0.16em;
+}
+
+.c-button--stamp:hover {
+  filter: brightness(1.05);
+}
+
+.c-button--ghost {
+  background: transparent;
+  color: inherit;
+  border-color: color-mix(in srgb, currentColor 35%, transparent);
+}
+
+.c-link {
+  display: block;
+  margin-block-start: var(--space-3);
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  opacity: 0.8;
+  width: 100%;
+  text-align: center;
+}

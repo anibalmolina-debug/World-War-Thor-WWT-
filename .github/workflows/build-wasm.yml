@@ -1,0 +1,40 @@
+name: Build WASM
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Emscripten
+        uses: mymindstorm/setup-emscripten@v1
+        with:
+          version: latest
+
+      - name: Install CMake and Ninja
+        run: sudo apt-get update && sudo apt-get install -y cmake ninja-build
+
+      - name: Configure and Build
+        run: |
+          cmake --preset wasm-release
+          cmake --build build/wasm-release
+
+      - name: Check Size Budgets
+        run: |
+          CORE_SIZE=$(stat -c%s build/wasm-release/wwt_core.wasm)
+          UI_SIZE=$(stat -c%s build/wasm-release/wwt_ui.wasm)
+          echo "Core Size: $CORE_SIZE bytes"
+          echo "UI Size: $UI_SIZE bytes"
+          if [ $CORE_SIZE -gt 500000 ]; then echo "wwt_core.wasm exceeds budget (500KB)"; exit 1; fi
+          if [ $UI_SIZE -gt 2000000 ]; then echo "wwt_ui.wasm exceeds budget (2MB)"; exit 1; fi
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wasm-artifacts
+          path: build/wasm-release/*.wasm

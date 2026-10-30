@@ -1,0 +1,43 @@
+.s-treaties {
+  display: grid;
+  gap: var(--space-4);
+  place-items: center;
+}
+
+.s-treaties__slip {
+  width: min(30rem, 100%);
+  background: var(--cream);
+  padding: var(--space-5);
+  border: 1px solid var(--ink);
+  box-shadow: var(--shadow-1);
+  position: relative;
+  overflow: hidden;
+}
+
+.s-treaties__slip::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 100%;
+  background: linear-gradient(to left, transparent, rgba(0,0,0,0.05));
+}
+
+.s-treaties__parchment {
+  width: min(45rem, 100%);
+  background: #f4ecd8;
+  padding: var(--space-6);
+  border: 1px solid #d3cbb8;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+  font-family: var(--font-serif);
+  position: relative;
+}
+
+.s-treaties__parchment::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.05) 100%);
+  pointer-events: none;
+}

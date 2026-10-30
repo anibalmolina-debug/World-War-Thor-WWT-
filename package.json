@@ -1,0 +1,39 @@
+{
+  "name": "world-war-thor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node tools/dev-server.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint server web/glue tools --ext .js,.mjs",
+    "typecheck": "tsc --noEmit",
+    "tokens": "node tools/figma-tokens.mjs",
+    "build": "node tools/build-web.mjs",
+    "build:wasm": "node tools/build-wasm.mjs"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@netlify/functions": "^3.1.10",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "eslint": "^9.38.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "description": "Tactical bunker console for a classroom wargame. Same *kind* of tool as the\r original cabinet app, written from a staged plan, not from that site's source.",
+  "main": "eslint.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

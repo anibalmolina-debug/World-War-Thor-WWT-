@@ -1,0 +1,51 @@
+.c-field {
+  display: grid;
+  gap: var(--space-2);
+  margin-block: var(--space-3);
+  font-size: 0.95rem;
+}
+
+.c-field__row {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--ink);
+  background: var(--cream);
+}
+
+.c-input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  padding: 0.7rem 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.c-input::placeholder {
+  color: color-mix(in srgb, var(--ink) 35%, white);
+}
+
+.c-field__error {
+  color: var(--alarm);
+  font-size: 0.9rem;
+}
+
+.c-tabs--pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.c-tabs__tab {
+  border: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+  background: transparent;
+  padding: 0.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+}
+
+.c-tabs__tab[aria-selected="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}

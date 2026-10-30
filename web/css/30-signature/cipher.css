@@ -1,0 +1,43 @@
+@property --shift {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+.c-cipher-dial {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.c-cipher-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: rotate 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  rotate: calc(var(--shift) * 1deg);
+}
+
+.c-cipher-ring--outer {
+  width: 100px;
+  height: 100px;
+}
+
+.c-cipher-ring--inner {
+  width: 60px;
+  height: 60px;
+  rotate: calc(var(--shift) * -1.5deg);
+}
+
+.c-cipher-ring span {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  top: 5px;
+}

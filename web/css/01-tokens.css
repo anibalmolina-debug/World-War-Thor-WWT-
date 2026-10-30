@@ -1,0 +1,23 @@
+:root {
+  /* Colors */
+  --color-paper: #f4f1ea;
+  --color-ink: #2b2b2b;
+  --color-olive: #556b2f;
+  --color-alarm: #b22222;
+  --color-phosphor: #33ff33;
+
+  /* Typography */
+  --font-mono: 'Courier New', Courier, monospace;
+  --font-serif: Georgia, serif;
+
+  --text-base: 1rem;
+  --text-sm: 0.875rem;
+  --text-lg: 1.25rem;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+}
+
