@@ -26,7 +26,7 @@
     "eslint": "^9.38.0",
     "prettier": "^3.9.10",
     "typescript": "^5.9.3",
-    "vitest": "^3.2.4"
+    "vitest": "^5.0.5"
   },
   "description": "Tactical bunker console for a classroom wargame. Same *kind* of tool as the\r original cabinet app, written from a staged plan, not from that site's source.",
   "main": "eslint.config.js",
