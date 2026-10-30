@@ -262,24 +262,29 @@ window.addEventListener("hashchange", () => {
 
 async function bootstrap() {
   dispatch("set-loading", true);
-  const res = await api("GET", "/api/auth/me");
-  dispatch("set-loading", false);
-  if (!res.ok) {
-    dispatch("set-state", null);
-    return;
-  }
-  const state = res.data;
-  const route = parseRoute() === "login" ? "dashboard" : parseRoute();
-  let viewNationId = store.viewNationId;
-  if (state.viewer.role === "gm" && !viewNationId) {
-    viewNationId = state.nations[0]?.id || "";
-  }
-  if (state.viewer.role === "student") viewNationId = state.nation?.id || "";
+  try {
+    const res = await api("GET", "/api/auth/me");
+    dispatch("set-loading", false);
+    if (!res.ok) {
+      dispatch("set-state", null);
+      return;
+    }
+    const state = res.data;
+    const route = parseRoute() === "login" ? "dashboard" : parseRoute();
+    let viewNationId = store.viewNationId;
+    if (state.viewer.role === "gm" && !viewNationId) {
+      viewNationId = state.nations[0]?.id || "";
+    }
+    if (state.viewer.role === "student") viewNationId = state.nation?.id || "";
 
-  dispatch("set-state", state);
-  dispatch("set-route", route);
-  dispatch("set-viewNation", viewNationId);
-  syncDraft();
+    dispatch("set-state", state);
+    dispatch("set-route", route);
+    dispatch("set-viewNation", viewNationId);
+    syncDraft();
+  } catch (err) {
+    dispatch("set-loading", false);
+    boom(err);
+  }
 }
 
 async function saveVitals() {

@@ -74,7 +74,7 @@ function shellView(store, L) {
       <header class="l-header">
         <div class="l-header__brand">
           <div class="c-radar c-radar--sm" aria-hidden="true"></div>
-          <strong>${L("app.title")}</strong>
+          <strong class="l-header__title">${L("app.title")}</strong>
         </div>
         <dl class="l-status">
           <div><dt>${L("header.week")}</dt><dd>${g.week}</dd></div>
@@ -101,7 +101,11 @@ function shellView(store, L) {
           })
           .join("")}
       </nav>
-      <main id="main" class="l-main">${mainView(store, L, route)}</main>
+      <main id="main" class="l-main">
+        <div class="s-war-room">
+          ${mainView(store, L, route)}
+        </div>
+      </main>
       <footer class="l-footer">
         <span>${L("footer.careless")}</span>
         <span>v0.3.0 · core ${esc(store.state.coreVersion)}</span>
